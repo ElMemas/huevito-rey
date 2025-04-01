@@ -1,22 +1,12 @@
-import random
+def celsius_a_fahrenheit(celsius):
+    """Convierte una temperatura de Celsius a Fahrenheit."""
+    return (celsius * 9/5) + 32
 
-# Configuración inicial
-balas = [0, 0, 0, 0, 0, 1]  # 1 representa la bala, 0 son espacios vacíos
-random.shuffle(balas)  # Mezclar el tambor
+# Solicitar al usuario la temperatura en Celsius
+temperatura_celsius = float(input("Introduce la temperatura en Celsius: "))
 
-def ruleta_rusa():
-    print("¡Bienvenido al juego de la ruleta rusa!")
-    while True:
-        input("Presiona Enter para disparar...")
-        disparo = balas.pop()  # Sacar una posición del tambor
-        if disparo == 1:
-            print("¡Bang! Has perdido.")
-            break
-        else:
-            print("¡Click! Has sobrevivido.")
-            if not balas:  # Si el tambor está vacío
-                print("El tambor está vacío. ¡Has ganado!")
-                break
+# Convertir a Fahrenheit
+temperatura_fahrenheit = celsius_a_fahrenheit(temperatura_celsius)
 
-# Ejecutar el juego
-ruleta_rusa()
+# Mostrar el resultado
+print(f"{temperatura_celsius}°C son {temperatura_fahrenheit}°F")
